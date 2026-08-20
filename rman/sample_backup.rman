@@ -1,0 +1,16 @@
+run {
+  allocate channel c1 device type disk;
+  allocate channel c2 device type disk;
+
+  backup as compressed backupset incremental level 0 database
+    tag 'WEEKLY_L0';
+
+  backup archivelog all not backed up 1 times
+    tag 'ARCH_BKP';
+
+  backup current controlfile
+    tag 'CTL_BKP';
+
+  release channel c1;
+  release channel c2;
+}

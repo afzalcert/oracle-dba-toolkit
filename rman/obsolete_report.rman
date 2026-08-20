@@ -1,0 +1,4 @@
+show retention policy;
+report obsolete;
+report need backup;
+list backup summary;
