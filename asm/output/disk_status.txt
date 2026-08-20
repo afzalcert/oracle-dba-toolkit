@@ -1,0 +1,23 @@
+SQL> @disk_status.sql
+
+DISKGROUP          DISK_NUMBER DISK_NAME          PATH                                          HEADER_STATU MOUNT_STAT STATE        TOTAL_GB    FREE_GB                                                                                        
+------------------ ----------- ------------------ --------------------------------------------- ------------ ---------- ---------- ---------- ----------                                                                                        
+DATA                         0 DATA_0000          /dev/oracleasm/disks/DATA1                    MEMBER       CACHED     NORMAL            500      341.8                                                                                        
+DATA                         1 DATA_0001          /dev/oracleasm/disks/DATA2                    MEMBER       CACHED     NORMAL            500      341.8                                                                                        
+DATA                         2 DATA_0002          /dev/oracleasm/disks/DATA3                    MEMBER       CACHED     NORMAL            500      341.8                                                                                        
+DATA                         3 DATA_0003          /dev/oracleasm/disks/DATA4                    MEMBER       CACHED     NORMAL            500      341.8                                                                                        
+FLASH                        0 FLASH_0000         /dev/oracleasm/disks/FLASH1                   MEMBER       CACHED     NORMAL            500      185.7                                                                                        
+FLASH                        1 FLASH_0001         /dev/oracleasm/disks/FLASH2                   MEMBER       CACHED     NORMAL            500      185.9                                                                                        
+FRA                          0 FRA_0000           /dev/oracleasm/disks/FRA1                     MEMBER       CACHED     NORMAL            500        465                                                                                        
+FRA                          1 FRA_0001           /dev/oracleasm/disks/FRA2                     MEMBER       CACHED     NORMAL            500        465                                                                                        
+MGMT                         0 MGMT_0000          /dev/oracleasm/disks/GIMR1                    MEMBER       CACHED     NORMAL            100       74.4                                                                                        
+OCR                          0 OCR_0000           /dev/oracleasm/disks/OCR1                     MEMBER       CACHED     NORMAL             30       29.7                                                                                        
+OCR                          1 OCR_0001           /dev/oracleasm/disks/OCR2                     MEMBER       CACHED     NORMAL             30       29.7                                                                                        
+OCR                          2 OCR_0002           /dev/oracleasm/disks/OCR3                     MEMBER       CACHED     NORMAL             30       29.7                                                                                        
+RECO                         0 RECO_0000          /dev/oracleasm/disks/RECO1                    MEMBER       CACHED     NORMAL            100       99.8                                                                                        
+REDO                         0 REDO_0000          /dev/oracleasm/disks/REDO1                    MEMBER       CACHED     NORMAL             80         64                                                                                        
+REDOM                        0 REDOM_0000         /dev/oracleasm/disks/REDOM1                   MEMBER       CACHED     NORMAL             80       52.9                                                                                        
+
+15 rows selected.
+
+SQL> spool off

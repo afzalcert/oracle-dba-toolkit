@@ -1,0 +1,33 @@
+SQL> @diskgroup_usage.sql
+SQL> set lines 180 pages 100
+SQL> col name format a20
+SQL> col state format a12
+SQL> col type format a8
+SQL> 
+SQL> select name,
+  2  	    state,
+  3  	    type,
+  4  	    round(total_mb/1024) total_gb,
+  5  	    round(free_mb/1024) free_gb,
+  6  	    round(usable_file_mb/1024) usable_gb,
+  7  	    round((total_mb-free_mb)*100/nullif(total_mb,0),2) pct_used,
+  8  	    offline_disks
+  9  from   v$asm_diskgroup
+ 10  order  by pct_used desc;
+
+NAME                 STATE        TYPE       TOTAL_GB    FREE_GB  USABLE_GB   PCT_USED OFFLINE_DISKS                                                                                
+-------------------- ------------ -------- ---------- ---------- ---------- ---------- -------------                                                                                
+FLASH                MOUNTED      EXTERN         1000        372        372      62.84             0                                                                                
+REDOM                MOUNTED      EXTERN           80         53         53      33.89             0                                                                                
+DATA                 MOUNTED      EXTERN         2000       1367       1367      31.64             0                                                                                
+MGMT                 MOUNTED      EXTERN          100         74         74      25.59             0                                                                                
+REDO                 MOUNTED      EXTERN           80         64         64      19.97             0                                                                                
+FRA                  MOUNTED      EXTERN         1000        930        930       6.99             0                                                                                
+OCR                  MOUNTED      NORMAL           90         89         30       1.07             0                                                                                
+RECO                 MOUNTED      EXTERN          100        100        100         .2             0                                                                                
+
+8 rows selected.
+
+Elapsed: 00:00:00.06
+SQL> spool disk_status.txt
+

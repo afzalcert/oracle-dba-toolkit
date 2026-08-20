@@ -1,0 +1,5 @@
+SQL> @rebalance_status.sql
+
+no rows selected
+
+SQL> spool off
