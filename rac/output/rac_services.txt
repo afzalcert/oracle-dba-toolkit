@@ -1,0 +1,59 @@
+SQL> @rac_services.sql
+SQL> set lines 220 pages 100
+SQL> col service_name format a35
+SQL> col network_name format a45
+SQL> 
+SQL> select inst_id,
+  2  	    name service_name,
+  3  	    network_name
+  4  from   gv$active_services
+  5  where  name not like 'SYS$%'
+  6  order  by name, inst_id;
+
+   INST_ID SERVICE_NAME                        NETWORK_NAME                                                                                                                                                                 
+---------- ----------------------------------- ---------------------------------------------                                                                                                                                
+         1 TESTDBPP                          TESTDBPP                                                                                                                                                                   
+         2 TESTDBPP                          TESTDBPP                                                                                                                                                                   
+         1 TESTDBXDB                         TESTDBXDB                                                                                                                                                                  
+         2 TESTDBXDB                         TESTDBXDB                                                                                                                                                                  
+         1 testdbppsrv                       testdbppsrv                                                                                                                                                                
+         2 testdbppsrv                       testdbppsrv                                                                                                                                                                
+
+6 rows selected.
+
+Elapsed: 00:00:00.01
+SQL> 
+SQL> prompt
+
+SQL> prompt === configured services ===
+=== configured services ===
+SQL> 
+SQL> select name,
+  2  	    network_name,
+  3  	    goal,
+  4  	    clb_goal,
+  5  	    failover_method,
+  6  	    failover_type
+  7  from   dba_services
+  8  where  name not like 'SYS$%'
+  9  order  by name;
+
+NAME                                                             NETWORK_NAME                                  GOAL         CLB_G FAILOVER_METHOD                                                                           
+---------------------------------------------------------------- --------------------------------------------- ------------ ----- ----------------------------------------------------------------                          
+FAILOVER_TYPE                                                                                                                                                                                                               
+----------------------------------------------------------------                                                                                                                                                            
+TESTDB                                                         TESTDB                                                   LONG                                                                                            
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                            
+TESTDBPP                                                       TESTDBPP                                                 LONG                                                                                            
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                            
+TESTDBXDB                                                      TESTDBXDB                                                LONG                                                                                            
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                            
+testdbppsrv                                                    testdbppsrv                                 NONE         LONG  BASIC                                                                                     
+SESSION                                                                                                                                                                                                                     
+                                                                                                                                                                                                                            
+
+Elapsed: 00:00:00.01
+SQL> spool off

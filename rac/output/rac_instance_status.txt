@@ -1,0 +1,28 @@
+SQL> 
+SQL> @rac_instance_status.sql
+SQL> set lines 220 pages 100
+SQL> col instance_name format a14
+SQL> col host_name format a35
+SQL> col status format a10
+SQL> col database_status format a18
+SQL> col startup_time format a20
+SQL> 
+SQL> select inst_id,
+  2  	    instance_name,
+  3  	    host_name,
+  4  	    status,
+  5  	    database_status,
+  6  	    to_char(startup_time,'dd-mon-yyyy hh24:mi:ss') startup_time,
+  7  	    thread#,
+  8  	    archiver
+  9  from   gv$instance
+ 10  order  by inst_id;
+
+   INST_ID INSTANCE_NAME  HOST_NAME                           STATUS     DATABASE_STATUS    STARTUP_TIME            THREAD# ARCHIVE                                                                                         
+---------- -------------- ----------------------------------- ---------- ------------------ -------------------- ---------- -------                                                                                         
+         1 UCONSENTPP1    test01.mydomain.com  OPEN       ACTIVE             29-apr-2026 13:55:21          1 STARTED                                                                                         
+         2 UCONSENTPP2    test01.mydomain.com  OPEN       ACTIVE             28-apr-2026 12:52:54          2 STARTED                                                                                         
+
+Elapsed: 00:00:00.02
+SQL> 
+SQL> spool off
