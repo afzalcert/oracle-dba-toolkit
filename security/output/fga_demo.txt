@@ -1,0 +1,6 @@
+SQL> @unified_audit_recent.sql
+Enter value for hours: 48
+old   9: where  event_timestamp >= systimestamp - numtodsinterval(&hours,'HOUR')
+new   9: where  event_timestamp >= systimestamp - numtodsinterval(48,'HOUR')
+
+no rows selected
