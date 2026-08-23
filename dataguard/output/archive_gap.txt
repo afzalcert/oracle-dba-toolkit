@@ -1,0 +1,14 @@
+SYS@SEMATIPD1>@archive_gap.sql
+=== archive gap ===
+
+no rows selected
+
+
+=== last received / applied archive ===
+
+   THREAD# LAST_RECEIVED LAST_APPLIED                                                                                                                                               
+---------- ------------- ------------                                                                                                                                               
+         1        153338       153338                                                                                                                                               
+         2        137536       137536                                                                                                                                               
+
+SYS@SEMATIPD1>spool off;

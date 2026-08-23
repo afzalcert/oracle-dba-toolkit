@@ -1,0 +1,15 @@
+SYS@SEMATIPD1>@dg_status.sql
+
+NAME         DB_UNIQUE_NAME     DATABASE_ROLE      OPEN_MODE            PROTECTION_MODE        PROTECTION_LEVEL       SWITCHOVER_STATUS         FORCE_LOGGING                           FLASHBACK_ON                        
+------------ ------------------ ------------------ -------------------- ---------------------- ---------------------- ------------------------- --------------------------------------- ------------------                  
+SEMATIPD     SEMATIPD           PRIMARY            READ WRITE           MAXIMUM PERFORMANCE    MAXIMUM PERFORMANCE    TO STANDBY                YES                                     NO                                  
+
+
+=== archive destinations ===
+
+   DEST_ID STATUS    DESTINATION                                   DB_UNIQUE_NAME     ERROR                                                                                                                                 
+---------- --------- --------------------------------------------- ------------------ -------------------------------------------------------                                                                               
+         1 VALID     +FLASH                                        NONE                                                                                                                                                     
+         2 VALID     sematidr                                      sematidr                                                                                                                                                 
+
+SYS@SEMATIPD1>spool off;

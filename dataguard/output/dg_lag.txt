@@ -1,0 +1,26 @@
+SYS@SEMATIPD1>@dg_lag.sql
+
+no rows selected
+
+
+=== managed recovery processes ===
+
+PROCESS  STATUS                  THREAD#  SEQUENCE#     BLOCK#     BLOCKS                                                                                                                               
+-------- -------------------- ---------- ---------- ---------- ----------                                                                                                                               
+ARCH     CLOSING                       1     153338     137216        323                                                                                                                               
+ARCH     CLOSING                       1     153333     137216       1050                                                                                                                               
+ARCH     CLOSING                       1     153332     141312       1312                                                                                                                               
+ARCH     CLOSING                       1     153331     139264       1596                                                                                                                               
+ARCH     CLOSING                       1     153337     137216        416                                                                                                                               
+ARCH     CLOSING                       1     153318     139264        370                                                                                                                               
+ARCH     CLOSING                       1     153327     139264        659                                                                                                                               
+ARCH     CLOSING                       1     153336     139264        424                                                                                                                               
+DGRD     ALLOCATED                     0          0          0          0                                                                                                                               
+DGRD     ALLOCATED                     0          0          0          0                                                                                                                               
+DGRD     ALLOCATED                     0          0          0          0                                                                                                                               
+DGRD     ALLOCATED                     0          0          0          0                                                                                                                               
+LNS      WRITING                       1     153339      18466          6                                                                                                                               
+
+13 rows selected.
+
+SYS@SEMATIPD1>exit
