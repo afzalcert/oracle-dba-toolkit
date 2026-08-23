@@ -1,0 +1,8 @@
+SQL> @alert_summary.sql
+Enter value for hours: 48
+old   6: where  originating_timestamp >= systimestamp-numtodsinterval(&hours,'HOUR')
+new   6: where  originating_timestamp >= systimestamp-numtodsinterval(48,'HOUR')
+
+no rows selected
+
+SQL> exit

@@ -1,0 +1,22 @@
+SQL> @invalid_objects.sql
+
+OWNER                     OBJECT_TYPE                  INVALID_COUNT                                                                                                                
+------------------------- ---------------------------- -------------                                                                                                                
+TEST_BI                   SYNONYM                                  5                                                                                                                
+TEST_APEX                 INDEX                                    3                                                                                                                
+TEST_TEST                 VIEW                                     3                                                                                                                
+ORDS_METADATA             PACKAGE BODY                             3                                                                                                                
+TESTAPP                   SYNONYM                                  2                                                                                                                
+PUBLIC                    SYNONYM                                  2                                                                                                                
+TEST                      PACKAGE BODY                             1                                                                                                                
+TEST                      VIEW                                     1                                                                                                                
+TEST_APEX                 PROCEDURE                                1                                                                                                                
+TEST_TEST                 FUNCTION                                 1                                                                                                                
+TEST_TEST                 PACKAGE BODY                             1                                                                                                                
+TEST_TEST                 PROCEDURE                                1                                                                                                                
+ORDS_METADATA             PACKAGE                                  1                                                                                                                
+SQLTXADMIN                PACKAGE BODY                             1                                                                                                                
+
+14 rows selected.
+
+SQL> spool off;
