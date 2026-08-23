@@ -1,0 +1,219 @@
+[oracle@rac-01 aec_output]$ dgmgrl /
+DGMGRL for Linux: Release 19.0.0.0.0 - Production on Sun Aug 23 08:57:53 2026
+Version 19.29.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Welcome to DGMGRL, type "help" for information.
+Connected to "TESTDB"
+Connected as SYSDG.
+DGMGRL> SHOW CONFIGURATION;
+
+Configuration - testdb
+
+  Protection Mode: MaxPerformance
+  Members:
+  testdb - Primary database
+    stddb - Physical standby database 
+
+Fast-Start Failover:  Disabled
+
+Configuration Status:
+SUCCESS   (status updated 29 seconds ago)
+
+DGMGRL> SHOW CONFIGURATION VERBOSE;
+
+Configuration - testdb
+
+  Protection Mode: MaxPerformance
+  Members:
+  testdb - Primary database
+    stddb - Physical standby database 
+
+  Properties:
+    FastStartFailoverThreshold      = '30'
+    OperationTimeout                = '30'
+    TraceLevel                      = 'USER'
+    FastStartFailoverLagLimit       = '30'
+    CommunicationTimeout            = '180'
+    ObserverReconnect               = '0'
+    FastStartFailoverLagGraceTime   = '0'
+    FastStartFailoverAutoReinstate  = 'TRUE'
+    FastStartFailoverPmyShutdown    = 'TRUE'
+    BystandersFollowRoleChange      = 'ALL'
+    ObserverOverride                = 'FALSE'
+    ExternalDestination1            = ''
+    ExternalDestination2            = ''
+    PrimaryLostWriteAction          = 'CONTINUE'
+    ConfigurationWideServiceName    = 'TESTDB_CFG'
+    FastStartFailoverLagType        = 'APPLY'
+    PrimaryDatabaseCandidates       = ''
+
+Fast-Start Failover:  Disabled
+
+Configuration Status:
+SUCCESS   (status updated 37 seconds ago)
+
+DGMGRL> SHOW DATABASE VERBOSE TESTDB
+
+Database - testdb
+
+  Role:               PRIMARY
+  Intended State:     TRANSPORT-ON
+  Instance(s):
+    SEMATIPD1
+    SEMATIPD2
+
+  Properties:
+    DGConnectIdentifier             = 'testdb'
+    ObserverConnectIdentifier       = ''
+    FastStartFailoverTarget         = ''
+    PreferredObserverHosts          = ''
+    LogShipping                     = 'ON'
+    RedoRoutes                      = ''
+    LogXptMode                      = 'ASYNC'
+    DelayMins                       = '0'
+    Binding                         = 'optional'
+    MaxFailure                      = '0'
+    ReopenSecs                      = '300'
+    NetTimeout                      = '30'
+    RedoCompression                 = 'DISABLE'
+    PreferredApplyInstance          = ''
+    ApplyInstanceTimeout            = '0'
+    ApplyLagThreshold               = '30'
+    TransportLagThreshold           = '30'
+    TransportDisconnectedThreshold  = '30'
+    ApplyParallel                   = 'AUTO'
+    ApplyInstances                  = '0'
+    StandbyFileManagement           = ''
+    ArchiveLagTarget                = '0'
+    LogArchiveMaxProcesses          = '0'
+    LogArchiveMinSucceedDest        = '0'
+    DataGuardSyncLatency            = '0'
+    LogArchiveTrace                 = '0'
+    LogArchiveFormat                = ''
+    DbFileNameConvert               = ''
+    LogFileNameConvert              = ''
+    ArchiveLocation                 = ''
+    AlternateLocation               = ''
+    StandbyArchiveLocation          = ''
+    StandbyAlternateLocation        = ''
+    InconsistentProperties          = '(monitor)'
+    InconsistentLogXptProps         = '(monitor)'
+    LogXptStatus                    = '(monitor)'
+    SendQEntries                    = '(monitor)'
+    RecvQEntries                    = '(monitor)'
+    UserManagedParams               = ''
+    HostName(*)
+    StaticConnectIdentifier(*)
+    TopWaitEvents(*)
+    SidName(*)
+    (*) - Please check specific instance for the property value
+
+  Log file locations(*):
+    (*) - Check specific instance for log file locations.
+
+Database Status:
+SUCCESS
+
+DGMGRL> SHOW DATABASE VERBOSE STDDB
+
+Database - stddb
+
+  Role:               PHYSICAL STANDBY
+  Intended State:     APPLY-ON
+  Transport Lag:      0 seconds (computed 0 seconds ago)
+  Apply Lag:          0 seconds (computed 0 seconds ago)
+  Average Apply Rate: 262.00 KByte/s
+  Active Apply Rate:  385.00 KByte/s
+  Maximum Apply Rate: 10.04 MByte/s
+  Real Time Query:    OFF
+  Instance(s):
+    SEMATIDR
+
+  Properties:
+    DGConnectIdentifier             = 'stddb'
+    ObserverConnectIdentifier       = ''
+    FastStartFailoverTarget         = ''
+    PreferredObserverHosts          = ''
+    LogShipping                     = 'ON'
+    RedoRoutes                      = ''
+    LogXptMode                      = 'ASYNC'
+    DelayMins                       = '0'
+    Binding                         = 'optional'
+    MaxFailure                      = '0'
+    ReopenSecs                      = '300'
+    NetTimeout                      = '30'
+    RedoCompression                 = 'DISABLE'
+    PreferredApplyInstance          = ''
+    ApplyInstanceTimeout            = '0'
+    ApplyLagThreshold               = '30'
+    TransportLagThreshold           = '30'
+    TransportDisconnectedThreshold  = '30'
+    ApplyParallel                   = 'AUTO'
+    ApplyInstances                  = '0'
+    StandbyFileManagement           = ''
+    ArchiveLagTarget                = '0'
+    LogArchiveMaxProcesses          = '0'
+    LogArchiveMinSucceedDest        = '0'
+    DataGuardSyncLatency            = '0'
+    LogArchiveTrace                 = '0'
+    LogArchiveFormat                = ''
+    DbFileNameConvert               = ''
+    LogFileNameConvert              = ''
+    ArchiveLocation                 = ''
+    AlternateLocation               = ''
+    StandbyArchiveLocation          = ''
+    StandbyAlternateLocation        = ''
+    InconsistentProperties          = '(monitor)'
+    InconsistentLogXptProps         = '(monitor)'
+    LogXptStatus                    = '(monitor)'
+    SendQEntries                    = '(monitor)'
+    RecvQEntries                    = '(monitor)'
+    UserManagedParams               = ''
+    HostName                        = 'orap-01'
+    StaticConnectIdentifier         = '(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.32.146)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=STDDB_DGMGRL)(INSTANCE_NAME=STDDB)(SERVER=DEDICATED)))'
+    TopWaitEvents                   = '(monitor)'
+    SidName                         = '(monitor)'
+
+  Log file locations:
+    Alert log               : /u02/app/oracle/diag/rdbms/stddb/STDDB/trace/alert_STDDB.log
+    Data Guard Broker log   : /u02/app/oracle/diag/rdbms/stddb/STDDB/trace/drcSTDDB.log
+
+Database Status:
+SUCCESS
+
+DGMGRL> VALIDATE DATABASE TESTDB
+
+  Database Role:    Primary database
+
+  Ready for Switchover:  Yes
+
+  Flashback Database Status:
+    sematipd:  Off
+
+  Managed by Clusterware:
+    sematipd:  YES            
+
+DGMGRL> VALIDATE DATABASE STDDB
+
+  Database Role:     Physical standby database
+  Primary Database:  testdb
+
+  Ready for Switchover:  Yes
+  Ready for Failover:    Yes (Primary Running)
+
+  Flashback Database Status:
+    sematipd:  Off
+    sematidr:  On
+
+  Capacity Information:
+    Database  Instances        Threads        
+    sematipd  2                2              
+    sematidr  1                2              
+    Warning: the target standby has fewer instances than the
+    primary database, this may impact application performance
+
+  Managed by Clusterware:
+    sematipd:  YES            
+    sematidr:  YES            
