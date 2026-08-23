@@ -1,8 +1,8 @@
-SYS@SEMATIPD1>@dg_status.sql
+SYS@TESTPD1>@dg_status.sql
 
 NAME         DB_UNIQUE_NAME     DATABASE_ROLE      OPEN_MODE            PROTECTION_MODE        PROTECTION_LEVEL       SWITCHOVER_STATUS         FORCE_LOGGING                           FLASHBACK_ON                        
 ------------ ------------------ ------------------ -------------------- ---------------------- ---------------------- ------------------------- --------------------------------------- ------------------                  
-SEMATIPD     SEMATIPD           PRIMARY            READ WRITE           MAXIMUM PERFORMANCE    MAXIMUM PERFORMANCE    TO STANDBY                YES                                     NO                                  
+TESTPD     TESTPD           PRIMARY            READ WRITE           MAXIMUM PERFORMANCE    MAXIMUM PERFORMANCE    TO STANDBY                YES                                     NO                                  
 
 
 === archive destinations ===
@@ -12,4 +12,4 @@ SEMATIPD     SEMATIPD           PRIMARY            READ WRITE           MAXIMUM 
          1 VALID     +FLASH                                        NONE                                                                                                                                                     
          2 VALID     sematidr                                      sematidr                                                                                                                                                 
 
-SYS@SEMATIPD1>spool off;
+SYS@TESTPDD1>spool off;
