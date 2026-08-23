@@ -1,0 +1,24 @@
+SQL> @backup_status.sql
+Enter value for days: 1
+old  11: where  start_time >= sysdate-&days
+new  11: where  start_time >= sysdate-1
+
+no rows selected
+
+SQL> @backup_status.sql
+Enter value for days: 3
+old  11: where  start_time >= sysdate-&days
+new  11: where  start_time >= sysdate-3
+
+SESSION_KEY INPUT_TYPE         STATUS                   START_TIME         END_TIME                 MINS
+----------- ------------------ ------------------------ ------------------ ------------------ ----------
+INPUT_BYTES_DISPLAY
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT_BYTES_DISPLAY
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OUTPUT_DEVICE_TYP
+-----------------
+       4379 RECVR AREA         COMPLETED                21-aug-26 09:00    21-aug-26 09:49            49
+  529.20G
+  278.21G
+SBT_TAPE
