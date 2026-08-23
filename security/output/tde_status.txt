@@ -1,0 +1,27 @@
+SQL> @tde_status.sql
+=== wallet status ===
+
+    CON_ID WALLET_TYPE        STATUS               KEYSTORE_MODE      WRL_TYPE             WRL_PARAMETER
+---------- ------------------ -------------------- ------------------ -------------------- ------------------------------------------------------------
+         0 AUTOLOGIN          OPEN                 NONE               ASM                  +data/testpp/wallet/tde/
+
+
+=== encrypted tablespaces ===
+
+TABLESPACE_NAME                ENC ENCRYPT STATUS
+------------------------------ --- ------- --------------------
+APEX                           YES AES128  NORMAL
+APEX_11913764910185331         YES AES128  NORMAL
+APEX_13624330534549287         YES AES128  NORMAL
+APEX_1400261002160683          YES AES128  NORMAL
+APEX_17042920297157983         YES AES128  NORMAL
+TEST_APEX_DATA                 YES AES128  NORMAL
+TEST_DATA_TBS                  YES AES128  NORMAL
+TEST_INDEX_TBS                 YES AES128  NORMAL
+TEST_LOB_TBS                   YES AES128  NORMAL
+PSAPUNDO002                    YES AES128  NORMAL
+
+
+10 rows selected.
+
+SQL> spool off;
