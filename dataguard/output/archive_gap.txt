@@ -1,4 +1,4 @@
-SYS@SEMATIPD1>@archive_gap.sql
+SYS@TESTPD1>@archive_gap.sql
 === archive gap ===
 
 no rows selected
@@ -11,4 +11,4 @@ no rows selected
          1        153338       153338                                                                                                                                               
          2        137536       137536                                                                                                                                               
 
-SYS@SEMATIPD1>spool off;
+SYS@TESTPD1>spool off;
