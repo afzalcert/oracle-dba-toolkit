@@ -1,0 +1,21 @@
+SQL> @top_sql.sql
+Enter value for topn: 10
+old  19: where rownum <= &topn
+new  19: where rownum <= 10
+
+   INST_ID SQL_ID         PLAN_HASH_VALUE EXECUTIONS ELAPSED_SEC    AVG_SEC    CPU_SEC BUFFER_GETS DISK_READS ROWS_PROCESSED SQL_TEXT                                                                                                                               
+---------- -------------- --------------- ---------- ----------- ---------- ---------- ----------- ---------- -------------- ------------------------------------------------------------------------------------------                                             
+         2 avf5k3k0x0cxn       3746835944       5545      1643.8       .296        5.1       46756         24              0            insert into stats_advisor_filter_obj$            (rule_id, obj#, flags, type)                                               
+         1 avf5k3k0x0cxn       3746835944       5497      1642.9       .299        5.7       46867         43              0            insert into stats_advisor_filter_obj$            (rule_id, obj#, flags, type)                                               
+         1 b6usrg82hwsa3                0         11       702.5     63.866      535.4    94618708     459105              0 call dbms_stats.gather_database_stats_job_proc (  )                                                                                    
+         2 6mcpb06rctk0x                0         64       604.9      9.452      506.5   123872039     639574              0 call dbms_space.auto_space_advisor_job_proc (  )                                                                                       
+         2 bkxutbht25d8g       4025217407     327647       475.8       .001        157     8150397      76351         327645 insert into TEST.t14_not_send_log (code,deletion_date,response_http_code,is_del                                             
+         1 bkxutbht25d8g       4025217407     276242       420.9       .002      136.9     6793027      46888         276242 insert into TEST.t14_not_log (code,deletion_date,response,is_del                                             
+         1 0r3ud4b9fh25h                0      98710       295.2       .003      126.5     7892746      85874          98706 insert into data_generator (api_key,backend_frt,backend_fst,backend_vrt,backend_vst,border_                                             
+         2 gaqa7mbvyhdk8         18763354     280769       272.7       .001      100.4     2741994      75412         280769 insert into TEST.t18_api_log (curl_command,deletion_date,http_method,is_deleted,operator                                             
+         1 gaqa7mbvyhdk8         18763354     283230       256.2       .001       89.3     2797093      98745         283230 insert into TEST.t18_api_log (curl_command,deletion_date,http_method,is_deleted,operator                                             
+         1 39k4gf5t0831y                0      17890       125.4       .007        101      657218       3660              0 call WWV_FLOW_MAIL.PUSH_QUEUE_IMMEDIATE (  )                                                                                           
+
+10 rows selected.
+
+SQL> exit

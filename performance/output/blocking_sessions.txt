@@ -1,0 +1,10 @@
+SQL> @blocking_sessions.sql
+
+no rows selected
+
+
+=== blockers ===
+
+no rows selected
+
+SQL> exit
